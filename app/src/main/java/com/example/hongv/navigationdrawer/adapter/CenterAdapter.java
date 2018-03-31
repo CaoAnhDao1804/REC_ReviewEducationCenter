@@ -1,5 +1,6 @@
 package com.example.hongv.navigationdrawer.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.example.hongv.navigationdrawer.R;
 import com.example.hongv.navigationdrawer.model.Center;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 /**
@@ -53,6 +55,7 @@ public class CenterAdapter extends BaseAdapter{
         return 0;
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         if (convertView == null) {
@@ -62,14 +65,17 @@ public class CenterAdapter extends BaseAdapter{
         txtNameCenter = (TextView) convertView.findViewById(R.id.txtCenTerName);
         txtAddressCenter = (TextView) convertView.findViewById(R.id.txtCenterAddress);
         txtPhoneCenter= (TextView) convertView.findViewById(R.id.txtCenterPhone);
-        txtQuality =(TextView) convertView.findViewById(R.id.txtCenTerName);
+        txtQuality =(TextView) convertView.findViewById(R.id.txtDanhgia);
 
         Center center = getItem(position);
 //        imgAvatar.setImageResource(R.drawable.ezienghlish);????
+        imgAvatar.setImageResource(center.getPicture());
+//        int id = center.getPicture();
+//        imgAvatar.setImageResource(id);
         txtNameCenter.setText(center.getNameCenter().toString());
         txtAddressCenter.setText(center.getAddress().toString());
         txtPhoneCenter.setText(center.getPhone().toString());
-
+        txtQuality.setText(String.valueOf(center.getQuality()).toString());
         return convertView;
 
     }

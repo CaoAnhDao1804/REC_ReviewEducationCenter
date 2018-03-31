@@ -1,10 +1,12 @@
 package com.example.hongv.navigationdrawer.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 03/02/2018.
  */
 
-public class Center {
+public class Center implements Serializable {
     private  int idCenter;
     private  String nameCenter;
     private  String address;

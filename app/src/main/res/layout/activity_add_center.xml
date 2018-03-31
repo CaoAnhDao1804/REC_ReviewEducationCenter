@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/side_nav_bar"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Thêm trung tâm"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtAddNameCenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:hint="Nhập vào tên Center"/>
+
+    <EditText
+        android:id="@+id/edtAddAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:hint="Nhập vào địa chỉ"/>
+
+    <EditText
+        android:id="@+id/edtAddPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:hint="Nhập vào số điện thoại"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm"
+        android:background="#ffffff"
+        android:textColor="@color/side_nav_bar"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+
+
+
+</LinearLayout>
