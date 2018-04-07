@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ public class CategoryList extends Fragment {
     private ListView lvData;
     private ImageView imageAddCenter;
     private FloatingActionButton btAdd;
+    private Button btnAddCenter;
 
     @Nullable
     @Override
@@ -43,10 +45,26 @@ public class CategoryList extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getData();
         initView();
+        lvData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), EditCenterActivity.class);
+                intent.putExtra("Edit", centerAdapter.getItem(i));
+                startActivityForResult(intent,20);
+            }
+        });
+        btnAddCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddCenterActivity.class);
+                startActivityForResult(intent,10);
+            }
+        });
     }
 
     private  void initView(){
         centerAdapter = new CenterAdapter(listData, getActivity());
+        btnAddCenter =getView().findViewById(R.id.btnAddCenter);
         lvData = getView().findViewById(R.id.lvData);
         lvData.setAdapter(centerAdapter);
         centerAdapter.notifyDataSetChanged();
